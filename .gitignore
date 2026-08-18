@@ -41,7 +41,7 @@ dmypy.json
 # Matplotlib local caches
 .matplotlib/
 
-# Generated figures (CLI defaults: output/, output/radial_line/, output/grouped_ring_bar/)
+# Generated figures (CLI defaults: output/, output/radial_line/, output/grouped_ring_bar/, output/grouped_lm_marginal/)
 output/
 .tmp_xhs/
 

@@ -14,6 +14,7 @@ class CliTests(unittest.TestCase):
             status = main(["--help"])
         text = buffer.getvalue()
         self.assertEqual(status, 0)
+        self.assertIn("grouped-lm-marginal", text)
         self.assertIn("grouped-ring-bar", text)
         self.assertIn("radar-bubble", text)
         self.assertIn("radial-line", text)

@@ -5,9 +5,10 @@ from __future__ import annotations
 import sys
 from collections.abc import Sequence
 
-from . import grouped_ring_bar, radar_bubble, radial_line
+from . import grouped_lm_marginal, grouped_ring_bar, radar_bubble, radial_line
 
 COMMANDS = {
+    "grouped-lm-marginal": grouped_lm_marginal.main,
     "grouped-ring-bar": grouped_ring_bar.main,
     "radar-bubble": radar_bubble.main,
     "radial-line": radial_line.main,
@@ -19,9 +20,10 @@ usage: main.py <chart> [options]
 Reproducible scientific visualization examples.
 
 charts:
-  grouped-ring-bar   grouped annular bar chart of forecasting MSE
-  radar-bubble       31-region annular radar-bubble chart
-  radial-line        64-feature radial phenotype line chart
+  grouped-lm-marginal  grouped linear-fit scatter with marginal histograms
+  grouped-ring-bar     grouped annular bar chart of forecasting MSE
+  radar-bubble         31-region annular radar-bubble chart
+  radial-line          64-feature radial phenotype line chart
 
 Run `main.py <chart> --help` for chart-specific options.
 """

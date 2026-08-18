@@ -1,6 +1,6 @@
 # Research visualization reproductions
 
-The three chart renderers live in the `src` package. `main.py` at
+The chart renderers live in the `src` package. `main.py` at
 the project root is the command-line entry point.
 
 ```bash
@@ -182,3 +182,55 @@ Within each dataset the shortest bar is the worst (largest) MSE and the longest
 bar is the best (smallest) MSE, so the five models are comparable inside a
 sector even when absolute scores differ across datasets. "MoFo (Ours)" is
 drawn last in every group and labelled in bold red in the legend.
+
+## Grouped linear-fit scatter with marginal histograms
+
+`src.grouped_lm_marginal` reproduces the Xiaohongshu carousel's
+GST–LST land-cover scatter: four groups (Grass, Land, Water, Urban), dashed
+OLS fits with 95% confidence bands, stacked histograms plus dashed KDE
+curves on the top and right margins, and all 16 colour palettes.
+
+Render palette 1 at the 2132 × 1962 reference size:
+
+```bash
+uv run python main.py grouped-lm-marginal --palette 1
+```
+
+Render all 16 palette variants:
+
+```bash
+uv run python main.py grouped-lm-marginal --palette all
+```
+
+Export editable vector files and a 300-DPI PNG:
+
+```bash
+uv run python main.py grouped-lm-marginal \
+  --palette all \
+  --formats png svg pdf \
+  --dpi 300 \
+  --output-dir output/grouped_lm_marginal
+```
+
+List palette names and hexadecimal colours:
+
+```bash
+uv run python main.py grouped-lm-marginal --list-palettes
+```
+
+Use it as a library:
+
+```python
+from pathlib import Path
+
+from src.grouped_lm_marginal import PALETTES, create_figure
+
+figure = create_figure(palette=PALETTES[0])
+figure.savefig(Path("grouped_lm_marginal.svg"))
+```
+
+The source post publishes the chart but not the underlying table.
+`DEFAULT_DATA` is a synthetic 25-point sample per group whose OLS slope,
+intercept, $R^2$, and $p$-value round to the printed annotations (Grass
+$R^2=0.845$, Urban $p=0.011$). Replace the `gst` and `lst` arrays when
+using the renderer with another dataset.
