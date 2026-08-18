@@ -1,27 +1,35 @@
 # Research visualization reproductions
 
+The three chart renderers live in the `src` package. `main.py` at
+the project root is the command-line entry point.
+
+```bash
+uv run python main.py --help
+uv run python -m src --help
+```
+
 ## 64-feature radial phenotype line chart
 
-`radial_line.py` reproduces the Xiaohongshu carousel's segmented radial line
-chart: 64 questionnaire features, nine semantic groups, four tinnitus
-phenotypes, seven z-score rings, and all 18 colour palettes.
+`src.radial_line` reproduces the Xiaohongshu carousel's segmented
+radial line chart: 64 questionnaire features, nine semantic groups, four
+tinnitus phenotypes, seven z-score rings, and all 18 colour palettes.
 
 Render palette 1 at the 1084 × 1080 reference size:
 
 ```bash
-uv run python radial_line.py --palette 1
+uv run python main.py radial-line --palette 1
 ```
 
 Render all 18 palette variants:
 
 ```bash
-uv run python radial_line.py --palette all
+uv run python main.py radial-line --palette all
 ```
 
 Export editable vector files and a 300-DPI PNG:
 
 ```bash
-uv run python radial_line.py \
+uv run python main.py radial-line \
   --palette all \
   --formats png svg pdf \
   --dpi 300 \
@@ -31,7 +39,7 @@ uv run python radial_line.py \
 List palette names and hexadecimal colours:
 
 ```bash
-uv run python radial_line.py --list-palettes
+uv run python main.py radial-line --list-palettes
 ```
 
 Use it as a library:
@@ -39,7 +47,7 @@ Use it as a library:
 ```python
 from pathlib import Path
 
-from radial_line import PALETTES, create_figure
+from src.radial_line import PALETTES, create_figure
 
 figure = create_figure(palette=PALETTES[0])
 figure.savefig(Path("radial_line.svg"))
@@ -54,29 +62,27 @@ using the renderer with another dataset.
 
 ## Annular radar-bubble chart
 
-`radar_bubble.py` reproduces the 31-region annular radar-bubble chart from the
-provided Xiaohongshu post. The renderer includes the chart geometry, labels,
-dual data encodings, legends, smooth closed profiles, and all 18 color
-palettes shown in the carousel.
-
-## Run it
+`src.radar_bubble` reproduces the 31-region annular radar-bubble
+chart from the provided Xiaohongshu post. The renderer includes the chart
+geometry, labels, dual data encodings, legends, smooth closed profiles, and
+all 18 color palettes shown in the carousel.
 
 Render the first palette at the reference image size (1196 × 1080 pixels):
 
 ```bash
-uv run python main.py --palette 1
+uv run python main.py radar-bubble --palette 1
 ```
 
 Render all 18 palettes:
 
 ```bash
-uv run python main.py --palette all
+uv run python main.py radar-bubble --palette all
 ```
 
 Export publication-ready PNG, SVG, and PDF files:
 
 ```bash
-uv run python main.py \
+uv run python main.py radar-bubble \
   --palette all \
   --formats png svg pdf \
   --dpi 300 \
@@ -86,7 +92,7 @@ uv run python main.py \
 List the palette names and hexadecimal colors:
 
 ```bash
-uv run python main.py --list-palettes
+uv run python main.py radar-bubble --list-palettes
 ```
 
 `--palette` accepts either a number (`1` through `18`) or one of those names.
@@ -94,17 +100,17 @@ uv run python main.py --list-palettes
 ## Customize the data
 
 The source post exposes the rendered images but not its underlying table.
-`DEFAULT_DATA` in `radar_bubble.py` therefore contains values digitized from
-the visible curve radii and bubble sizes. Replace its three `grain_yield`
-arrays and three `planting_area` arrays with your real data; every array must
-have one value for each label in `REGIONS`.
+`DEFAULT_DATA` in `src.radar_bubble` therefore contains values
+digitized from the visible curve radii and bubble sizes. Replace its three
+`grain_yield` arrays and three `planting_area` arrays with your real data;
+every array must have one value for each label in `REGIONS`.
 
 For use as a library:
 
 ```python
 from pathlib import Path
 
-from radar_bubble import PALETTES, create_figure
+from src.radar_bubble import PALETTES, create_figure
 
 figure = create_figure(palette=PALETTES[3])
 figure.savefig(Path("my_figure.svg"))
@@ -121,26 +127,27 @@ The implementation uses only NumPy and Matplotlib and runs headlessly.
 
 ## Grouped annular bar chart
 
-`grouped_ring_bar.py` reproduces the Xiaohongshu carousel's grouped polar bar
-chart: eight forecasting datasets, five models, inverted within-dataset MSE
-bars, curved sector labels, a central legend, and all 18 colour palettes.
+`src.grouped_ring_bar` reproduces the Xiaohongshu carousel's
+grouped polar bar chart: eight forecasting datasets, five models, inverted
+within-dataset MSE bars, curved sector labels, a central legend, and all 18
+colour palettes.
 
 Render palette 1 at the 2601 × 2601 reference size:
 
 ```bash
-uv run python grouped_ring_bar.py --palette 1
+uv run python main.py grouped-ring-bar --palette 1
 ```
 
 Render all 18 palette variants:
 
 ```bash
-uv run python grouped_ring_bar.py --palette all
+uv run python main.py grouped-ring-bar --palette all
 ```
 
 Export editable vector files and a 300-DPI PNG:
 
 ```bash
-uv run python grouped_ring_bar.py \
+uv run python main.py grouped-ring-bar \
   --palette all \
   --formats png svg pdf \
   --dpi 300 \
@@ -150,7 +157,7 @@ uv run python grouped_ring_bar.py \
 List palette names and hexadecimal colours:
 
 ```bash
-uv run python grouped_ring_bar.py --list-palettes
+uv run python main.py grouped-ring-bar --list-palettes
 ```
 
 Use it as a library:
@@ -158,7 +165,7 @@ Use it as a library:
 ```python
 from pathlib import Path
 
-from grouped_ring_bar import PALETTES, create_figure
+from src.grouped_ring_bar import PALETTES, create_figure
 
 figure = create_figure(palette=PALETTES[0])
 figure.savefig(Path("grouped_ring_bar.svg"))

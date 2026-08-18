@@ -6,7 +6,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from radial_line import (
+from src.radial_line import (
     DEFAULT_DATA,
     FEATURES,
     FEATURE_GROUPS,

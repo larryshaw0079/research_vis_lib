@@ -7,7 +7,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-from grouped_ring_bar import (
+from src.grouped_ring_bar import (
     DATASETS,
     DEFAULT_DATA,
     DEFAULT_STYLE,

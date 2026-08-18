@@ -6,7 +6,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from radar_bubble import (
+from src.radar_bubble import (
     DEFAULT_DATA,
     PALETTES,
     create_figure,

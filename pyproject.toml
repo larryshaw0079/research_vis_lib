@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "research-vis-lib"
 version = "0.1.0"
@@ -8,3 +12,11 @@ dependencies = [
     "matplotlib>=3.11.1",
     "numpy>=2.5.2",
 ]
+
+[project.scripts]
+research-vis-lib = "src.cli:main"
+
+[tool.hatch.build.targets.wheel]
+# `src/` is the importable package, not a src-layout root.
+directory = "."
+packages = ["src"]

@@ -1,6 +1,6 @@
-"""Command-line entry point for the radar-bubble figure reproduction."""
+"""Command-line entry point for the research visualization figures."""
 
-from radar_bubble import main
+from src.cli import main
 
 
 if __name__ == "__main__":
