@@ -118,3 +118,60 @@ figure.savefig(Path("my_figure.svg"))
 - Central white mask: turns the radar chart into an annular composition.
 
 The implementation uses only NumPy and Matplotlib and runs headlessly.
+
+## Grouped annular bar chart
+
+`grouped_ring_bar.py` reproduces the Xiaohongshu carousel's grouped polar bar
+chart: eight forecasting datasets, five models, inverted within-dataset MSE
+bars, curved sector labels, a central legend, and all 18 colour palettes.
+
+Render palette 1 at the 2601 × 2601 reference size:
+
+```bash
+uv run python grouped_ring_bar.py --palette 1
+```
+
+Render all 18 palette variants:
+
+```bash
+uv run python grouped_ring_bar.py --palette all
+```
+
+Export editable vector files and a 300-DPI PNG:
+
+```bash
+uv run python grouped_ring_bar.py \
+  --palette all \
+  --formats png svg pdf \
+  --dpi 300 \
+  --output-dir output/grouped_ring_bar
+```
+
+List palette names and hexadecimal colours:
+
+```bash
+uv run python grouped_ring_bar.py --list-palettes
+```
+
+Use it as a library:
+
+```python
+from pathlib import Path
+
+from grouped_ring_bar import PALETTES, create_figure
+
+figure = create_figure(palette=PALETTES[0])
+figure.savefig(Path("grouped_ring_bar.svg"))
+```
+
+The comparison is the horizon-720 MSE panel associated with
+[Ma et al. (2025)](https://openreview.net/forum?id=sbvLts2HqR). `DEFAULT_DATA`
+contains the values printed on the carousel bars, which match that table for
+most dataset–model pairs; a few labelled entries differ from the camera-ready
+numbers and were kept as shown in the figure. Replace the nested `mse` mapping
+when using the renderer with another table.
+
+Within each dataset the shortest bar is the worst (largest) MSE and the longest
+bar is the best (smallest) MSE, so the five models are comparable inside a
+sector even when absolute scores differ across datasets. "MoFo (Ours)" is
+drawn last in every group and labelled in bold red in the legend.

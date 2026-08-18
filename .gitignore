@@ -41,8 +41,9 @@ dmypy.json
 # Matplotlib local caches
 .matplotlib/
 
-# Generated figures (CLI defaults: output/, output/radial_line/)
+# Generated figures (CLI defaults: output/, output/radial_line/, output/grouped_ring_bar/)
 output/
+.tmp_xhs/
 
 # Accidental saves from README library examples
 /*.png
