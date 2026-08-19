@@ -1,0 +1,8 @@
+Scenario	Carbon price	Subsidy	Standard	Trade-off	Synergy
+Price only	48	0	0	0	0
+Subsidy only	0	41	0	0	0
+Standard only	0	0	37	0	0
+Price + subsidy	44	38	0	9	14
+Price + standard	45	0	34	11	12
+Subsidy + standard	0	39	33	7	16
+All three	42	36	31	15	22

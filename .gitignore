@@ -38,20 +38,17 @@ dmypy.json
 # Jupyter
 .ipynb_checkpoints/
 
-# Matplotlib local caches
+# Matplotlib local caches. MPLCONFIGDIR is pointed at .mplcache so a sandboxed
+# run does not need to write to the home directory.
 .matplotlib/
+.mplcache/
 
-# Generated figures (CLI defaults: output/, output/radial_line/, output/grouped_ring_bar/, output/grouped_lm_marginal/, output/flower_plot/, output/grouped_gradient_hist/, output/pie_3d/, output/smooth_radar/, output/concordance_upset/, output/bar_line/, output/cartoon_stacked_bar/, output/pie_ring/)
+# Generated figures and generated figure scripts
 output/
-.tmp_xhs/
-.tmp_xhs_petal/
-.tmp_xhs_hist/
-.tmp_xhs_pie/
-.tmp_xhs_radar/
-.tmp_xhs_upset/
-.tmp_xhs_barline/
-.tmp_xhs_cartoon_stack/
-.tmp_xhs_pie_ring/
+figures/
+
+# Scratch directories used while verifying renders
+.tmp_*/
 
 # Accidental saves from README library examples
 /*.png

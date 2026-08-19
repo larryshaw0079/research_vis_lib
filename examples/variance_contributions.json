@@ -1,0 +1,42 @@
+{
+  "study": "drivers of canopy greenness",
+  "unit": "percent of explained variance",
+  "factors": [
+    {
+      "factor": "Solar radiation",
+      "contribution": 21.4
+    },
+    {
+      "factor": "Land surface temperature",
+      "contribution": 18.2
+    },
+    {
+      "factor": "Precipitation",
+      "contribution": 15.9
+    },
+    {
+      "factor": "Soil moisture",
+      "contribution": 12.7
+    },
+    {
+      "factor": "Elevation",
+      "contribution": 9.8
+    },
+    {
+      "factor": "Nitrogen deposition",
+      "contribution": 7.3
+    },
+    {
+      "factor": "Slope",
+      "contribution": 6.1
+    },
+    {
+      "factor": "Aspect",
+      "contribution": 4.4
+    },
+    {
+      "factor": "Residual",
+      "contribution": 4.2
+    }
+  ]
+}

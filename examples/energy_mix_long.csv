@@ -1,0 +1,17 @@
+Sector,Fuel,Energy_EJ
+Industry,Coal,3.1
+Industry,Oil,0.62
+Industry,Gas,0.74
+Industry,Electricity,1.85
+Buildings,Coal,0.44
+Buildings,Oil,0.21
+Buildings,Gas,0.96
+Buildings,Electricity,1.52
+Road transport,Coal,0.02
+Road transport,Oil,2.41
+Road transport,Gas,0.18
+Road transport,Electricity,0.33
+Agriculture,Coal,0.15
+Agriculture,Oil,0.48
+Agriculture,Gas,0.09
+Agriculture,Electricity,0.27

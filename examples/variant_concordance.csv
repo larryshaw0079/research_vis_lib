@@ -1,0 +1,9 @@
+Concordance,Plasma_specific,Tissue_specific,Shared,Patients
+Disconcordant,no,yes,no,420
+Disconcordant,yes,no,no,7
+Disconcordant,yes,yes,no,76
+Complete concordant,no,no,no,8
+Complete concordant,no,no,yes,42
+Partially concordant,yes,no,yes,99
+Partially concordant,no,yes,yes,209
+Partially concordant,yes,yes,yes,250
