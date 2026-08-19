@@ -342,7 +342,7 @@ class ChartStyle:
 
     figure_size: tuple[float, float] = (12.774, 7.2)
     axes_bounds: tuple[float, float, float, float] = (0.074, 0.138, 0.912, 0.792)
-    x_limits: tuple[float, float] = (-0.85, 11.45)
+    x_limits: tuple[float, float] = (-0.85, 11.68)
     y_limits: tuple[float, float] = (-18.0, 168.0)
     y_max: float = 150.0
     bar_width: float = 0.62
@@ -470,7 +470,7 @@ def _draw_frame(ax: Axes, style: ChartStyle) -> None:
     ax.add_patch(
         FancyBboxPatch(
             (style.x_limits[0] + 0.08, -6.5),
-            style.x_limits[1] - style.x_limits[0] - 0.18,
+            style.x_limits[1] - style.x_limits[0] - 0.16,
             style.y_max + 20.5,
             boxstyle="round,pad=0,rounding_size=0.18",
             mutation_aspect=aspect,

@@ -62,7 +62,7 @@ class CartoonStackedBarTests(unittest.TestCase):
             self.assertEqual(tuple(figure.get_size_inches()), (12.774, 7.2))
             self.assertEqual(len(figure.axes), 1)
             ax = figure.axes[0]
-            np.testing.assert_allclose(ax.get_xlim(), (-0.85, 11.45))
+            np.testing.assert_allclose(ax.get_xlim(), (-0.85, 11.68))
             np.testing.assert_allclose(ax.get_ylim(), (-18.0, 168.0))
             self.assertEqual(ax.get_ylabel(), "Effect Score")
             self.assertEqual(list(ax.get_yticks()), [0.0, 30.0, 60.0, 90.0, 120.0, 150.0])
