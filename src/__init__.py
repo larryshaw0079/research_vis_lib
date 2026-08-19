@@ -1,5 +1,27 @@
 """Reproducible scientific-visualization examples."""
 
-from . import grouped_lm_marginal, grouped_ring_bar, radar_bubble, radial_line
+from . import (
+    bar_line,
+    concordance_upset,
+    flower_plot,
+    grouped_gradient_hist,
+    grouped_lm_marginal,
+    grouped_ring_bar,
+    pie_3d,
+    radar_bubble,
+    radial_line,
+    smooth_radar,
+)
 
-__all__ = ["grouped_lm_marginal", "grouped_ring_bar", "radar_bubble", "radial_line"]
+__all__ = [
+    "bar_line",
+    "concordance_upset",
+    "flower_plot",
+    "grouped_gradient_hist",
+    "grouped_lm_marginal",
+    "grouped_ring_bar",
+    "pie_3d",
+    "radar_bubble",
+    "radial_line",
+    "smooth_radar",
+]
