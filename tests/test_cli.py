@@ -15,12 +15,14 @@ class CliTests(unittest.TestCase):
         text = buffer.getvalue()
         self.assertEqual(status, 0)
         self.assertIn("bar-line", text)
+        self.assertIn("cartoon-stacked-bar", text)
         self.assertIn("concordance-upset", text)
         self.assertIn("flower-plot", text)
         self.assertIn("grouped-gradient-hist", text)
         self.assertIn("grouped-lm-marginal", text)
         self.assertIn("grouped-ring-bar", text)
         self.assertIn("pie-3d", text)
+        self.assertIn("pie-ring", text)
         self.assertIn("radar-bubble", text)
         self.assertIn("radial-line", text)
         self.assertIn("smooth-radar", text)
@@ -55,6 +57,14 @@ class CliTests(unittest.TestCase):
         self.assertIn("navy-peach-maroon", buffer.getvalue())
         self.assertIn("spectral-rainbow", buffer.getvalue())
 
+    def test_pie_ring_command_lists_palettes(self) -> None:
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            status = main(["pie-ring", "--list-palettes"])
+        self.assertEqual(status, 0)
+        self.assertIn("amber-coral-azure", buffer.getvalue())
+        self.assertIn("honey-blush-slate", buffer.getvalue())
+
     def test_flower_plot_command_lists_palettes(self) -> None:
         buffer = io.StringIO()
         with redirect_stdout(buffer):
@@ -62,6 +72,14 @@ class CliTests(unittest.TestCase):
         self.assertEqual(status, 0)
         self.assertIn("gray-peach-orchid", buffer.getvalue())
         self.assertIn("tol-muted", buffer.getvalue())
+
+    def test_cartoon_stacked_bar_command_lists_palettes(self) -> None:
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            status = main(["cartoon-stacked-bar", "--list-palettes"])
+        self.assertEqual(status, 0)
+        self.assertIn("sky-cream-mint", buffer.getvalue())
+        self.assertIn("olive-rust-rose", buffer.getvalue())
 
     def test_bar_line_command_lists_palettes(self) -> None:
         buffer = io.StringIO()

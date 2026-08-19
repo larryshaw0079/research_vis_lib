@@ -41,7 +41,7 @@ dmypy.json
 # Matplotlib local caches
 .matplotlib/
 
-# Generated figures (CLI defaults: output/, output/radial_line/, output/grouped_ring_bar/, output/grouped_lm_marginal/, output/flower_plot/, output/grouped_gradient_hist/, output/pie_3d/, output/smooth_radar/, output/concordance_upset/, output/bar_line/)
+# Generated figures (CLI defaults: output/, output/radial_line/, output/grouped_ring_bar/, output/grouped_lm_marginal/, output/flower_plot/, output/grouped_gradient_hist/, output/pie_3d/, output/smooth_radar/, output/concordance_upset/, output/bar_line/, output/cartoon_stacked_bar/, output/pie_ring/)
 output/
 .tmp_xhs/
 .tmp_xhs_petal/
@@ -50,6 +50,8 @@ output/
 .tmp_xhs_radar/
 .tmp_xhs_upset/
 .tmp_xhs_barline/
+.tmp_xhs_cartoon_stack/
+.tmp_xhs_pie_ring/
 
 # Accidental saves from README library examples
 /*.png
